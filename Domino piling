@@ -1,0 +1,15 @@
+#include <stdio.h>
+unsigned int M = 0;
+unsigned int N = 0;
+unsigned int out;
+int main()
+{
+    scanf("%i",&M);
+    scanf("%i",&N);
+    if((M >= 1)&&(N <= 16)&&(M <= N))
+    {
+        out = (N*M)/2;
+    }
+    printf("%i",out);
+    return 0;
+}
