@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <string.h>
+char s[100];
+unsigned int i = 0;
+unsigned int c = 0;
+unsigned int j = 0;
+unsigned int n = 0;
+unsigned int a[100];
+int main()
+{
+    scanf("%s",&s);
+    unsigned int m = strlen(s);
+    for(i = 0;i < m;i++)
+    {
+        if((i%2) == 0)
+        {
+            a[c] = (int)s[i];
+            c++;
+        }
+    }
+    for(j = 1;j < c;j++)
+    {
+       for(n = 0;n <(c-j);n++)
+       {
+           if(a[n] > a[n+1])
+           {
+               unsigned int temp = a[n];
+               a[n] = a[n+1];
+               a[n+1] = temp;
+           }
+       }
+    }
+    for(int k = 0;k < c;k++)
+    {
+        if(k == (c-1))
+        {
+            printf("%c",(char)a[k]);
+        }
+        else
+        {
+            printf("%c%c",(char)a[k],'+');
+        }
+    }
+    return 0;
+}
